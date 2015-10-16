@@ -155,22 +155,25 @@ public class Basic {
 
 		if (Loader.isModLoaded("progressiveautomation") && (Loader.isModLoaded("exnihilo")))
 		{
-			//Cheaper CobbleGen
-			ItemStack cobblegen = GameRegistry.findItemStack("progressiveautomation", "CobbleUpgrade", 1);
-			ItemStack miner = GameRegistry.findItemStack("progressiveautomation", "MinerStone", 1);
-			ItemStack lava = GameRegistry.findItemStack("IguanaTweaksTConstruct", "clayBucketLava", 1);
-			GameRegistry.addRecipe(new ShapedOreRecipe((cobblegen),
-
-					"SSS",
-					"LMW",
-					"SSS",
-					'S', "stone",
-					'L', lava,
-					'M', miner,
-					'W', "listAllwater"
-					));
-			Main.log.info("cheaper cobble gen for the miner");
-
+			if (Loader.isModLoaded("IguanaTweaksTConstruct"))
+			{
+				//Cheaper CobbleGen
+				ItemStack cobblegen = GameRegistry.findItemStack("progressiveautomation", "CobbleUpgrade", 1);
+				ItemStack miner = GameRegistry.findItemStack("progressiveautomation", "MinerStone", 1);
+				ItemStack lava = GameRegistry.findItemStack("IguanaTweaksTConstruct", "clayBucketLava", 1);
+				GameRegistry.addRecipe(new ShapedOreRecipe((cobblegen),
+	
+						"SSS",
+						"LMW",
+						"SSS",
+						'S', "stone",
+						'L', lava,
+						'M', miner,
+						'W', "listAllwater"
+						));
+				Main.log.info("cheaper cobble gen for the miner");
+			}
+			
 			ItemStack stonegen = GameRegistry.findItemStack("progressiveautomation", "GeneratorStone", 1);
 			ItemStack rfengine = GameRegistry.findItemStack("progressiveautomation", "RFEngine", 1);
 			GameRegistry.addRecipe(new ShapedOreRecipe((stonegen),
